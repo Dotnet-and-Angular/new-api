@@ -160,3 +160,4 @@
 /Users/gunasekharraju/Desktop/workspace/DotNet/new-api/bin/Debug/net9.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 /Users/gunasekharraju/Desktop/workspace/DotNet/new-api/bin/Debug/net9.0/Microsoft.IdentityModel.Tokens.dll
 /Users/gunasekharraju/Desktop/workspace/DotNet/new-api/bin/Debug/net9.0/System.IdentityModel.Tokens.Jwt.dll
+/Users/gunasekharraju/Desktop/workspace/DotNet/new-api/obj/Debug/net9.0/new-api.sourcelink.json

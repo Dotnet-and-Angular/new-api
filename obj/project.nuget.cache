@@ -63,5 +63,15 @@
     "/Users/gunasekharraju/.nuget/packages/system.text.json/9.0.9/system.text.json.9.0.9.nupkg.sha512",
     "/Users/gunasekharraju/.nuget/packages/system.threading.channels/7.0.0/system.threading.channels.7.0.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "message": "Error occurred while getting package vulnerability data: Unable to load the service index for source https://api.nuget.org/v3/index.json.",
+      "projectPath": "/Users/gunasekharraju/Desktop/workspace/DotNet/new-api/new-api.csproj",
+      "warningLevel": 1,
+      "filePath": "/Users/gunasekharraju/Desktop/workspace/DotNet/new-api/new-api.csproj",
+      "targetGraphs": []
+    }
+  ]
 }
