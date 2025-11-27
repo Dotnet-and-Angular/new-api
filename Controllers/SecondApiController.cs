@@ -20,6 +20,7 @@ public class PersonController : ControllerBase
         return Ok(new { Message = "Hello from PersonApi", Timestamp = DateTime.UtcNow });
     }
 
+    [Authorize]
     [HttpPost("create")]
     public async Task<ActionResult<Person>> Create(Person person)
     {

@@ -23,8 +23,9 @@ public class ApiKeyMiddleware
             return;
         }
 
-        // Allow auth endpoints (token, send-otp, verify-otp) to be called without an API key
-        if (context.Request.Path.StartsWithSegments("/api/auth", StringComparison.OrdinalIgnoreCase))
+        // Allow auth endpoints (token, send-otp, verify-otp) and admin register to be called without an API key
+        if (context.Request.Path.StartsWithSegments("/api/auth", StringComparison.OrdinalIgnoreCase) ||
+            context.Request.Path.StartsWithSegments("/api/admin/register", StringComparison.OrdinalIgnoreCase))
         {
             await _next(context);
             return;

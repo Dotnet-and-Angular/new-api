@@ -28,6 +28,9 @@ public static class ServiceExtensions
         // JWT authentication - register only when Jwt:Key is provided
         AddJwtAuthenticationIfConfigured(services, configuration);
 
+        // Always add authorization services
+        services.AddAuthorization();
+
         return services;
     }
 
@@ -70,8 +73,5 @@ public static class ServiceExtensions
                 ClockSkew = TimeSpan.FromSeconds(30)
             };
         });
-
-        // Register authorization services when authentication is present
-        services.AddAuthorization();
     }
 }

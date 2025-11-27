@@ -1,7 +1,9 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using MyFirstApi.Models;
 
@@ -10,15 +12,29 @@ using MyFirstApi.Models;
 public class AuthController : ControllerBase
 {
     private readonly IConfiguration _config;
-    public AuthController(IConfiguration config) => _config = config;
+    private readonly AppDbContext _db;
+
+    public AuthController(IConfiguration config, AppDbContext db)
+    {
+        _config = config;
+        _db = db;
+    }
 
     [HttpPost("token")]
     [Microsoft.AspNetCore.Authorization.AllowAnonymous]
-    public ActionResult GetToken([FromBody] LoginModel login)
+    public async Task<ActionResult> GetToken([FromBody] LoginModel login)
     {
-        // TODO: replace with real user validation
-        if (login == null || login.Username != "admin" || login.Password != "password")
-            return Unauthorized();
+        if (login == null || string.IsNullOrWhiteSpace(login.Username) || string.IsNullOrWhiteSpace(login.Password))
+            return Unauthorized(new { message = "Invalid username or password" });
+
+        // Find admin in database
+        var admin = await _db.Admins.FirstOrDefaultAsync(a => a.Username == login.Username);
+        if (admin == null)
+            return Unauthorized(new { message = "Invalid username or password" });
+
+        // Verify password using PBKDF2
+        if (!VerifyPassword(login.Password, admin.PasswordHash, admin.PasswordSalt))
+            return Unauthorized(new { message = "Invalid username or password" });
 
         var jwtSection = _config.GetSection("Jwt");
         var key = Encoding.UTF8.GetBytes(jwtSection["Key"] ?? throw new InvalidOperationException("JWT Key is missing in configuration."));
@@ -38,5 +54,13 @@ public class AuthController : ControllerBase
         );
 
         return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token) });
+    }
+
+    private bool VerifyPassword(string password, string hash, string salt)
+    {
+        var saltBytes = Convert.FromBase64String(salt);
+        var hashBytes = Convert.FromBase64String(hash);
+        var derivedBytes = Rfc2898DeriveBytes.Pbkdf2(password, saltBytes, 10000, HashAlgorithmName.SHA256, 32);
+        return CryptographicOperations.FixedTimeEquals(derivedBytes, hashBytes);
     }
 }
