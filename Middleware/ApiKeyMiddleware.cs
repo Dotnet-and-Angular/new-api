@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Authorization;
 
-namespace NewApi.Middleware;
+namespace nexus_bank.Middleware;
 
 public class ApiKeyMiddleware
 {

@@ -1,6 +1,6 @@
 
-using NewApi.Extensions;
-using NewApi.Middleware;
+using nexus_bank.Extensions;
+using nexus_bank.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 

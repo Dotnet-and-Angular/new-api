@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
-namespace NewApi.Extensions;
+namespace nexus_bank.Extensions;
 
 /// <summary>
 /// Registers application services: controllers, optional DB and optional JWT auth.
