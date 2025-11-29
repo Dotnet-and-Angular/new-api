@@ -6,7 +6,7 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v9.0": {
-      "new-api/1.0.0": {
+      "nexus_bank/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.JwtBearer": "9.0.9",
           "Microsoft.AspNetCore.OpenApi": "9.0.9",
@@ -16,7 +16,7 @@
           "System.IdentityModel.Tokens.Jwt": "8.14.0"
         },
         "runtime": {
-          "new-api.dll": {}
+          "nexus_bank.dll": {}
         }
       },
       "Humanizer.Core/2.14.1": {
@@ -888,7 +888,7 @@
     }
   },
   "libraries": {
-    "new-api/1.0.0": {
+    "nexus_bank/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

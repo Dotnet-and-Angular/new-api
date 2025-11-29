@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/gunasekharraju/Desktop/workspace/DotNet/new-api/new-api.csproj": {}
+    "/Users/gunasekharraju/Desktop/workspace/DotNet/Nexus_bank/nexus_bank.csproj": {}
   },
   "projects": {
-    "/Users/gunasekharraju/Desktop/workspace/DotNet/new-api/new-api.csproj": {
+    "/Users/gunasekharraju/Desktop/workspace/DotNet/Nexus_bank/nexus_bank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/gunasekharraju/Desktop/workspace/DotNet/new-api/new-api.csproj",
-        "projectName": "new-api",
-        "projectPath": "/Users/gunasekharraju/Desktop/workspace/DotNet/new-api/new-api.csproj",
+        "projectUniqueName": "/Users/gunasekharraju/Desktop/workspace/DotNet/Nexus_bank/nexus_bank.csproj",
+        "projectName": "nexus_bank",
+        "projectPath": "/Users/gunasekharraju/Desktop/workspace/DotNet/Nexus_bank/nexus_bank.csproj",
         "packagesPath": "/Users/gunasekharraju/.nuget/packages/",
-        "outputPath": "/Users/gunasekharraju/Desktop/workspace/DotNet/new-api/obj/",
+        "outputPath": "/Users/gunasekharraju/Desktop/workspace/DotNet/Nexus_bank/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/gunasekharraju/.nuget/NuGet/NuGet.Config"

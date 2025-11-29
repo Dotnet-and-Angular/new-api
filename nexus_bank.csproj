@@ -4,7 +4,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <RootNamespace>new_api</RootNamespace>
+    <RootNamespace>nexus_bank</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
